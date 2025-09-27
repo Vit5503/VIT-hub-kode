@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test2</title>
+</head>
+<style>
+    *{
+        padding: 40px;
+    }
+    #demo{
+        font-size: 50px;
+    }
+</style>
+<body>
+    <div id="demo">
+        JavaScript Variable
+    </div>
+    <input type="button" value="Click Me" onclick="sport()">
+    <input type="button" value="Next-year" onclick="sport2()">
+</body>
+<script>
+    var year = 2024;
+    function sport(){
+        var rmd = "Real Madrid";
+        var ucl = "15";
+        var llg = "36";
+        year = 2025;
+        var total = parseFloat(ucl) + parseFloat(llg);      //parseFloat use for convert num in string to int or convert to float.
+        document.getElementById("demo").innerHTML = total;
+        console.log(year);
+    }
+    function sport2(){
+        console.log(year);
+    }
+</script>
+</html>

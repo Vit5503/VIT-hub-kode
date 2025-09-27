@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test4</title>
+</head>
+<style>
+    input{
+        padding: 20px;
+    }
+    #demo{
+        font-size: 40px;
+        width: 360px;
+        height: 260px;
+        background-color: pink;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div id="demo">
+        <!-- Demo -->
+    </div>
+    <input type="button" value="Click me" id="btn1">
+
+    <input type="button" value="Hide/Show"  id="btn2">
+
+    <label for="">Total</label>
+    <input type="text" name="" id="txt-total">
+    <label for="">Result</label>
+    <input type="text" name="" id="txt-result">
+</body>
+<script>
+    const demo = document.getElementById("demo");
+    var opt = 0;
+    const txtTotal = document.getElementById("txt-total");
+    const txtResult = document.getElementById("txt-result");
+
+    document.getElementById("btn1").addEventListener("click",function(){
+        // var total = 50;
+        var score = 60;
+        if(score >=90){
+            demo.innerHTML = "Grade A";
+        }else if(score >= 80){
+            demo.innerHTML = "Grade B";
+        }else if(score >= 70){
+            demo.innerHTML = "Grade C";
+        }else if(score >= 60){
+            demo.innerHTML = "Grade D";
+        }else if(score >= 50){
+            demo.innerHTML = "Grade E";
+        }else{
+            demo.innerHTML = "Grade F";
+        }
+    })
+
+    // Hide / Show element
+    document.getElementById("btn2").addEventListener("click",function(){
+        if(opt==0){
+            demo.style.display = "none";
+            opt = 1;
+        }else{
+            demo.style.display = "flex";
+            opt = 0;
+        }
+        console.log(opt);
+    })
+
+
+    txtTotal.addEventListener("keyup",function(){
+        if(txtTotal.value>=50){
+            txtResult.value = "pass";
+        }else{
+            txtResult.value = "Fail";
+        }
+    })
+</script>
+</html>

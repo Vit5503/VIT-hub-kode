@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3</title>
+</head>
+<style>
+    input{
+        padding: 19px;
+    }
+    #demo{
+        font-size: 50px;
+    }
+    .box{
+        padding: 20px;
+        float: left;
+        margin: 10px;
+        background-color: seagreen;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="demo">
+        Demo
+    </div>
+    <input type="button" value="Click1" id="btn1">
+    <input type="button" value="Click2" id="btn2">
+    <input type="button" value="Click3" id="btn3">
+    <input type="button" value="Click4" id="btn4">
+    <div class="box">
+        1
+    </div>
+    <div class="box">
+        2
+    </div>
+    <div class="box">
+        3
+    </div>
+
+    <label for="">Qty</label>
+    <input type="number" name="" id="txt-qty">
+    <label for="">Price</label>
+    <input type="number" name="" id="txt-price">
+    <label for="">Total</label>
+    <input type="number" name="" id="txt-total" readonly>
+</body>
+<script>
+    // Solution 1
+    document.getElementById("btn1").addEventListener("click" , function(){
+        test1();
+        // document.getElementById("demo").innerHTML = "java script";
+    })
+
+    // Solution 2
+    document.querySelector("#btn2").addEventListener("click" , function(){
+        console.log("bb");
+    })
+
+    // Solution 3
+    document.getElementById("btn3").onclick = function(){
+        console.log("cc");
+    }
+
+    //Solution 4
+    document.querySelector("#btn4").onclick = function(){
+        console.log("dd");
+    }
+
+    function test1(){
+        console.log("Click me more!")
+    }
+
+
+    document.querySelectorAll(".box")[0].addEventListener("click" , function(){
+        console.log("Box1");
+    })
+    document.querySelectorAll(".box")[1].addEventListener("click" , function(){
+        console.log("Box2");
+    })
+    document.querySelectorAll(".box")[2].addEventListener("click" , function(){
+        console.log("Box3");
+    })
+
+
+    var qty = document.getElementById("txt-qty");
+    var price = document.getElementById("txt-price");
+    var total = document.getElementById("txt-total");
+
+    qty.addEventListener("keyup" , function(){
+        // total.value = qty.value * price.value;
+        // getTotal();
+        // getTotal2(qty.value , price.value);
+        total.value = getTotal3(qty.value , price.value);
+    })
+    price.addEventListener("keyup" , function(){
+        // total.value = qty.value * price.value;
+        // getTotal();
+        // getTotal2(qty.value , price.value);
+        total.value = getTotal3(qty.value , price.value);
+    })
+    // Solution 1
+    function getTotal(){
+        total.value = qty.value * price.value;
+    }
+
+    // solution 2
+    function getTotal2( q , p ){
+        total.value = q * p;
+    }
+
+    // Solution 3
+    function getTotal3(p , q){
+        return q * p;
+    }
+</script>
+</html>

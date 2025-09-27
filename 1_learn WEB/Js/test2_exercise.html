@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test2 Exercise</title>
+</head>
+<style>
+    *{
+        padding: 20px;
+    }
+</style>
+<body>
+    <label for="">Num1</label>
+    <input type="text" name="" id="txt-num1">
+    <label for="">Num2</label>
+    <input type="text" name="" id="txt-num2">
+    <label for="">total</label>
+    <input type="text" name="" id="txt-total">
+    <input type="button" value="+" onclick="sum()">
+    <input type="button" value="-" onclick="minus()">
+    <input type="button" value="*" onclick="multiplication()">
+    <input type="button" value="/" onclick="divider()">
+</body>
+<script>
+    var num1 = document.getElementById("txt-num1");
+    var num2 = document.getElementById("txt-num2");
+    function sum(){
+        document.getElementById("txt-total").value = parseFloat(num1.value) + parseFloat(num2.value);
+    }
+    function minus(){
+        document.getElementById("txt-total").value = parseFloat(num1.value) - parseFloat(num2.value);
+    }
+    function multiplication(){
+        document.getElementById("txt-total").value = parseFloat(num1.value) * parseFloat(num2.value);
+    }
+    function divider(){
+        document.getElementById("txt-total").value = parseFloat(num1.value) / parseFloat(num2.value);
+    }
+</script>
+</html>
