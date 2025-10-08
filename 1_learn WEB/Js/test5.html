@@ -13,6 +13,16 @@
         width: 369px;
         height: 236px;
         background-color: seagreen;
+        color: white;
+        font-size: 80px;
+        display: flex;
+        
+    }
+    .box{
+        width: 200px;
+        height: 100px;
+        background-color: orangered;
+        margin: 10px;
     }
 </style>
 <body>
@@ -21,7 +31,13 @@
 </body>
 <script>
     document.getElementById("btn1").addEventListener("click", function(){
-        console.log("hello js");
+        var txt= "";
+
+        for(i=0 ; i<5 ; i++){
+            console.log(i);
+            txt = txt +"<div class='box'>"+i+"</div> ";
+        }
+        document.getElementById("demo").innerHTML = txt;
     });
 </script>
 </html>
