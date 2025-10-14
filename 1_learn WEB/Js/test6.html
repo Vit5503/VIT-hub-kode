@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6</title>
+</head>
+<style>
+    #demo{
+        font-size: 50px;
+    }
+    input{
+        padding: 20px;
+    }
+</style>
+<body>
+    <div id="demo">
+
+    </div>
+    <input type="button" value="Click Me" id="btn1">
+</body>
+<script>
+    document.getElementById("btn1").addEventListener("click", function(){
+        var colorList = ["red","yellow","blue","green","brown"];
+        var num = colorList.length;
+        var txt = "";
+        for(i=0 ; i<num ; i++){
+            txt += colorList[i];
+            console.log(colorList[i]);
+        }
+        console.log(txt);
+        document.getElementById("demo").innerHTML = txt;
+
+
+        // console.log(colorList[2]);
+        // document.getElementById("demo").innerHTML = colorList[2];
+    })
+</script>
+</html>
