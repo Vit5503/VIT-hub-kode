@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6</title>
+    <link rel="stylesheet" href="/1_learn WEB/style/test6.css">
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <input type="button" value="Click Me" id="btn1">
+    <input type="button" value="Obj" id="btn2">
+</body>
+<script>
+    document.getElementById("btn2").addEventListener("click", function() {
+        var item = "Apple";
+        var itemList = ["Apple", "Samsung"];
+        var obj1 = {"name":"iPhone 17 PM", "color":"orange", "price":"2000"};
+        // console.log(obj1.name);
+        var colorList = [
+                            {"name":"html","color":"yellow"},
+                            {"name":"css","color":"pink"},
+                            {"name":"javascript","color":"black"}
+        ];
+        var txt = "";
+        for(i in colorList){
+            // txt += colorList[i].name;
+            txt += `<li>
+                        <a style='color:${colorList[i]['color']}'>
+                            ${colorList[i].name} 
+                        </a>
+                    </li>`;
+        }
+        document.getElementById("demo").innerHTML = `<ul> ${txt} </ul>`
+    })
+
+    document.getElementById("btn1").addEventListener("click", function(){
+        var colorList = ["red","yellow","blue","green","brown"];
+        var num = colorList.length;
+        var txt = "";
+        for(i in colorList){
+            console.log(colorList[i]);
+            txt += `
+                <li>
+                    <a>
+                        ${colorList[i]}
+                    </a>
+                </li>
+            `;
+        }
+        document.getElementById("demo").innerHTML =`<ul> ${txt} </ul>`;
+        })
+</script>
+</html>

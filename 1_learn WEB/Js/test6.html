@@ -4,15 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test6</title>
+    <link rel="stylesheet" href="/1_learn WEB/style/test6.css">
 </head>
-<style>
-    #demo{
-        font-size: 50px;
-    }
-    input{
-        padding: 20px;
-    }
-</style>
 <body>
     <div id="demo">
 
@@ -25,11 +18,18 @@
         var num = colorList.length;
         var txt = "";
         for(i=0 ; i<num ; i++){
-            txt += colorList[i];
+            // txt += colorList[i] + "<br>";
+            txt += `
+                <li>
+                    <a>
+                        ${colorList[i]}
+                    </a>
+                </li>
+            `;
             console.log(colorList[i]);
         }
         console.log(txt);
-        document.getElementById("demo").innerHTML = txt;
+        document.getElementById("demo").innerHTML =`<ul> ${txt} </ul>`;
 
 
         // console.log(colorList[2]);
