@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-js-1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="item-list">
+            <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 item-box-1">
+                <div class="box">
+                    <h1>
+                        4. Trending Home & Garden items
+                    </h1>
+                    <div class="item">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="/1_learn WEB/image/new market.jpg" alt="">
+                                    <span>$4.44</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/1_learn WEB/image/new market.jpg" alt="">
+                                    <span>$4.44</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/1_learn WEB/image/new market.jpg" alt="">
+                                    <span>$4.44</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/1_learn WEB/image/new market.jpg" alt="">
+                                    <span>$4.44</span>
+                                </a>
+                            </li>
+                    </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+<script>
+    const itemList = [
+        {
+            "title" : "1. One-stop procurement",
+            "item"  : [
+                {"img" : "./img/1.avif",
+                 "price" : "0.90"},
+                {"img" : "./img/2.avif",
+                 "price" : "1.03"},
+                {"img" : "./img/3.avif",
+                 "price" : "5.99"},
+                {"img" : "./img/4.avif",
+                 "price" : "0.29"}
+            ]
+        },
+        {
+            "title" : "2. VR showroom",
+            "item"  : [
+                {"img" : "./img/5.avif",
+                 "price" : "0.90"},
+                {"img" : "./img/6.avif",
+                 "price" : "1.03"},
+                {"img" : "./img/7.avif",
+                 "price" : "5.99"},
+                {"img" : "./img/8.avif",
+                 "price" : "0.29"}
+            ]
+        },
+        {
+            "title" : "3.Products with Certifications",
+            "item"  : [
+                {"img" : "./img/9.avif",
+                 "price" : "0.90"},
+                {"img" : "./img/10.avif",
+                 "price" : "1.03"},
+                {"img" : "./img/11.avif",
+                 "price" : "5.99"},
+                {"img" : "./img/12.avif",
+                 "price" : "0.29"}
+            ]
+        },
+        {
+            "title" : "4.Trending Home & Garden items",
+            "item"  : [
+                {"img" : "./img/13.avif",
+                 "price" : "0.90"},
+                {"img" : "./img/14.avif",
+                 "price" : "1.03"},
+                {"img" : "./img/15.avif",
+                 "price" : "5.99"},
+                {"img" : "./img/16.avif",
+                 "price" : "0.29"}
+            ]
+        }
+    ];
+    const itemBox = document.getElementById("item-list");
+    getItemList();
+    function getItemList(){
+        var txt ="";
+        for(i in itemList){
+            var subItem = itemList[i]['item'];
+            var txt2 ="";
+            for (x in subItem){
+                txt2 +=`
+                    <li>
+                        <a href="#">
+                            <img src="${subItem[x]['img']}" alt="">
+                            <span>${subItem[x]['price']}</span>
+                        </a>
+                    </li>
+                `;
+            }
+            txt += `
+            <div class="col-xxl-6 col-xl-6 col-lg-6 item-box-1">
+                <div class="box">
+                    <h1>
+                        ${itemList[i]['title']}
+                    </h1>
+                    <div class="item">
+                        <ul>
+                            ${txt2}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+        itemBox.innerHTML = txt;
+    }
+</script>
+</html>
