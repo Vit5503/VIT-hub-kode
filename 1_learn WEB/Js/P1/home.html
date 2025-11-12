@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project-js-1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Js/p1.css">
 </head>
 <body>
     <div class="container">
@@ -109,17 +109,17 @@
         var txt ="";
         for(i in itemList){
             var subItem = itemList[i]['item'];
-            var txt2 ="";
-            for (x in subItem){
-                txt2 +=`
-                    <li>
-                        <a href="#">
-                            <img src="${subItem[x]['img']}" alt="">
-                            <span>${subItem[x]['price']}</span>
-                        </a>
-                    </li>
-                `;
-            }
+            // var txt2 ="";
+            // for (x in subItem){
+            //     txt2 +=`
+            //         <li>
+            //             <a href="#">
+            //                 <img src="${subItem[x]['img']}" alt="">
+            //                 <span>${subItem[x]['price']}</span>
+            //             </a>
+            //         </li>
+            //     `;
+            // }
             txt += `
             <div class="col-xxl-6 col-xl-6 col-lg-6 item-box-1">
                 <div class="box">
@@ -128,7 +128,7 @@
                     </h1>
                     <div class="item">
                         <ul>
-                            ${txt2}
+                            ${getSubItem(subItem)}
                         </ul>
                     </div>
                 </div>
@@ -136,6 +136,18 @@
             `;
         }
         itemBox.innerHTML = txt;
+    }
+    function getSubItem(items){
+        var txt = "";
+        for(i in items){
+            txt += `<li>
+                        <a href="#">
+                            <img src="${items[i]['img']}" alt="">
+                            <span>${items[i]['price']}</span>
+                        </a>
+                    </li>`
+        }
+        return txt;
     }
 </script>
 </html>
